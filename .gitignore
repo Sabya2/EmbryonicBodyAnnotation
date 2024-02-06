@@ -1,5 +1,7 @@
 # ignoring the environnement folders
 myofarm/
+annotated_spheroids/
+bigImg_spheroidDetails/
 # ignoring code files that are not needed for the project
 /compareFolder.py
 /image_check.ipynb

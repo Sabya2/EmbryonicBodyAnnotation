@@ -54,9 +54,13 @@ def MultiClass_spheroidLabelling(imgPath, csvPath, labels, annoteType, spheroidI
     return annotations
 
 # add a same button for all the images
-labels = ["Same_as_previous", 'Embryonic_Body', 'Location_Edge','Overlapping_EB', 'Connected_EB',
-          'Smooth_Outline', 'Cytstic', 'Shape_Round', 'Shape_Oval', 'Add_New_Property', "Can't_determine", 
-          "Chipped_detail"]
+labels = ['1a-EmbryonicBody', '1b-NonEmbryonicBody', '2a-LocationEdge', '2b-LocationCenter',
+          '3a-OverlappingEB', '3b-NonOverlappingEB', '4a-ConnectedEB','4b-DisconnectedEB',
+          '5a-SmoothOutline', '5b-RoughOutline', '6a-DenseEB', '6b-LightEB', 
+          '7a-NonCytstic', '7b-Cytstic', '7c-HeavilyCystic', 'Add_NewProperty',
+          '8a-IrregularShaped', '8b-OvalShaped', '8c-RoundShaped', 
+          "Same_As_previous", 'Cropped_Detail', "Can't_determine"]
+
 
 def annotastionCSV(imgPath, csvPath, spheroidInfo):
     annotations = MultiClass_spheroidLabelling(imgPath, csvPath,
