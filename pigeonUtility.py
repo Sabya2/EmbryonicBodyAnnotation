@@ -47,7 +47,7 @@ def MultiClass_spheroidLabelling(imgPath, csvPath, labels, annoteType, spheroidI
          print(f'CSV file created for spheroid_{spheroidInfo}')
 
     annotations = pixt.annotate(imgPath, task_type = annoteType,
-                                options = labels,
+                                options = labels, include_next= False,
                                 buttons_in_a_row = 4, shuffle=False,
                                 final_process_fn = finalProcessing, 
                                 display_fn = lambda filename: custom_display(filename))
