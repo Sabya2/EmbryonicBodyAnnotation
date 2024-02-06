@@ -134,7 +134,7 @@ def savingImages(mask, data, path, develop):
         cv2.imwrite(filename, combined_image)
         imgPathList.append(filename)
 
-        if develop == True and i == 2:
+        if develop == True and i == 10:
             break
 
     return imgPathList
