@@ -7,7 +7,7 @@ bigImg_spheroidDetails/
 /image_check.ipynb
 /cnn-profiling-1.ipynb
 /flow_testing.ipynb 
-# /annotationCodeDev.ipynb
+/annotationCodeDev.ipynb
 *.tif
 *.tiff
 *.pdf
