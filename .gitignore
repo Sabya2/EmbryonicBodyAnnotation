@@ -1,4 +1,4 @@
-# ignoring the environnement folders
+# ignoring the environnement and data folders
 myofarm/
 annotated_spheroids/
 bigImg_spheroidDetails/
@@ -11,3 +11,5 @@ bigImg_spheroidDetails/
 *.tif
 *.tiff
 *.pdf
+*.pickle
+*.csv

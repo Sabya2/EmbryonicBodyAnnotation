@@ -42,9 +42,18 @@ def MultiClass_spheroidLabelling(imgPath, csvPath, labels, annoteType, spheroidI
          annotations.to_csv(filename, index=False)
          annotations = pd.read_csv(filename)
          annotations['example'] = annotations['example'].apply(lambda x: x.split('/')[-1])
+         if sum(annotations['changed']) != len(annotations):
+             print(f'Not all EB are annotated for for spheroid_{spheroidInfo}\nPlease re-run the annotation for the unannotated images')
+         elif sum(annotations['changed']) == len(annotations): 
+             print(f'All the images are annotated for spheroid_{spheroidInfo}')
+             annotations.to_csv(filename, index=False)
+             print(f'CSV file created for spheroid_{spheroidInfo}')
+            
+             
+             
 
-         annotations.to_csv(filename, index=False)
-         print(f'CSV file created for spheroid_{spheroidInfo}')
+        #  annotations.to_csv(filename, index=False)
+        #  
 
     annotations = pixt.annotate(imgPath, task_type = annoteType,
                                 options = labels, include_next= False,
@@ -53,13 +62,19 @@ def MultiClass_spheroidLabelling(imgPath, csvPath, labels, annoteType, spheroidI
                                 display_fn = lambda filename: custom_display(filename))
     return annotations
 
+# # add a same button for all the images
+# labels = ['1a-EmbryonicBody', '1b-NonEmbryonicBody', '2a-LocationEdge', '2b-LocationCenter',
+#           '3a-OverlappingEB', '3b-NonOverlappingEB', '4a-ConnectedEB','4b-DisconnectedEB',
+#           '5a-SmoothOutline', '5b-RoughOutline', '6a-DenseEB',
+#           '7a-NonCytstic', '7b-Cytstic', '7c-HeavilyCystic', 'Add_NewProperty',
+#           '8a-IrregularShaped', '8b-OvalShaped', '8c-RoundShaped', 
+#           "Same_As_previous", 'Cropped_Detail', "Can't_determine"]
+
 # add a same button for all the images
-labels = ['1a-EmbryonicBody', '1b-NonEmbryonicBody', '2a-LocationEdge', '2b-LocationCenter',
-          '3a-OverlappingEB', '3b-NonOverlappingEB', '4a-ConnectedEB','4b-DisconnectedEB',
-          '5a-SmoothOutline', '5b-RoughOutline', '6a-DenseEB', '6b-LightEB', 
-          '7a-NonCytstic', '7b-Cytstic', '7c-HeavilyCystic', 'Add_NewProperty',
-          '8a-IrregularShaped', '8b-OvalShaped', '8c-RoundShaped', 
-          "Same_As_previous", 'Cropped_Detail', "Can't_determine"]
+labels = ['1-LocationEdge', '2-OverlappingEB', '3-ConnectedEB', '4-DenseEB',
+          '5a-SmoothOutline', '5b-RoughOutline', '5c-VeryRoughOutline', "Can't_determine",
+          '7a-NonCytstic', '7b-Cytstic', '7c-HeavilyCystic', "Same_As_previous",
+          '8a-IrregularShaped', '8b-OvalShaped', '8c-RoundShaped', "Cropped_Detail"]
 
 
 def annotastionCSV(imgPath, csvPath, spheroidInfo):
