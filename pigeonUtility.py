@@ -43,18 +43,14 @@ def MultiClass_spheroidLabelling(imgPath, csvPath, labels, annoteType, spheroidI
          annotations = pd.read_csv(filename)
          annotations['example'] = annotations['example'].apply(lambda x: x.split('/')[-1])
          if sum(annotations['changed']) != len(annotations):
-             print(f'Not all EB are annotated for for spheroid_{spheroidInfo}\nPlease re-run the annotation for the unannotated images')
+             print(f'Not all EBs are annotated for spheroid_{spheroidInfo}\nPlease re-run the annotation for the unannotated images')
          elif sum(annotations['changed']) == len(annotations): 
              print(f'All the images are annotated for spheroid_{spheroidInfo}')
              annotations.to_csv(filename, index=False)
              print(f'CSV file created for spheroid_{spheroidInfo}')
-            
-             
-             
 
-        #  annotations.to_csv(filename, index=False)
-        #  
 
+    # call for annotations
     annotations = pixt.annotate(imgPath, task_type = annoteType,
                                 options = labels, include_next= False,
                                 buttons_in_a_row = 4, shuffle=False,
