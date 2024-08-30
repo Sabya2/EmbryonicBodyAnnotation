@@ -10,7 +10,6 @@ import sys
 import argparse
 from argparse import ArgumentParser
 import shutil
-import compareFolders as cf
 import numpy as np  
 import pandas as pd
 import matplotlib.pyplot as plt

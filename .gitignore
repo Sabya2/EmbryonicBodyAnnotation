@@ -3,13 +3,19 @@ myofarm/
 annotated_spheroids/
 bigImg_spheroidDetails/
 # ignoring code files that are not needed for the project
-/compareFolder.py
+/fileManageUtility.py
 /image_check.ipynb
+/flow_testing.ipynb
+/annotationCodeDev.ipynb
+/annotationAnalysis.ipynb
 /cnn-profiling-1.ipynb
+/cnn-profiling-2.ipynb
 /flow_testing.ipynb 
 /annotationCodeDev.ipynb
 *.tif
 *.tiff
+*.png
+!annotationDemoPic.png
 *.pdf
 *.pickle
 *.csv
