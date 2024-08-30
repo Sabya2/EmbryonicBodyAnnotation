@@ -6,7 +6,7 @@ This project provides a streamlined pipeline and user-friendly interface for ann
 Features
 - Tissue Enumeration Pipeline
 - Automatically enumerates individual tissues for annotation.
-- Interactive Annotation Interface
+- Interactive Annotation Interface utilizing [pigeonXt](https://github.com/dennisbakhuis/pigeonXT)
 - Offers an easy-to-use, interactive interface for biologists to annotate tissue properties.
 - Annotated properties are exported as pickle files, ready for training Deep Learning models in PyTorch.
 
